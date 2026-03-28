@@ -1,210 +1,350 @@
-body{
+@font-face {
+    font-family: 'Philosopher-Bold';
+    src: url(./fonts/Philosopher-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-BoldItalic';
+    src: url(./fonts/Philosopher-BoldItalic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-Italic';
+    src: url(./fonts/Philosopher-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-Regular';
+    src: url(./fonts/Philosopher-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lobster-Regular';
+    src: url(./fonts/Lobster-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
     background-color: #ffffff;
 }
 
 .container {
-    max-width: 460px;
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-}
-
-.main_hand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.main_hand > div {
-    margin: 2px;
-}
-
-.main_img {
-    max-width: 150px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-.buluttar {
-    position: relative;
-    width: auto;
-}
-
-.buluttar_h {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.buluttar_h > .img_bu {
-    width: 150px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.buluttar_m {
-    position: relative;
-    z-index: 2;
-    padding-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-.name_title {
-    font-family: "Noto Serif KR", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    color: #73ADC3;
-}
-.n_title {
-    font-family: "Noto Serif KR", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    color: #73ADC3;
-}
-
-.main_title > h1 {
-    margin: 0;
-    font-size: 48px;
-}
-.main_title > h2 {
-    margin: 0;
+    width: 90%;
+    margin: auto;
     font-size: 18px;
 }
 
-
-.line__imges {
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-.line__imges > div {
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.line__imges_bu {
-    width: 32px;
-}
-
-.info_h {
-    position: relative;
-    display: flex;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    align-items: center;
-}
-
-.info_h_title {
-    position: relative;
-    display: block;
-    align-items: center;
-    z-index: 2;
-
-}
-.info_h_title > p {
-    margin: 0;
-    font-family: "Noto Serif KR", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    color: #73ADC3;
-    font-size: 22px;
-}
-.info_h_title > h1 {
-    margin: 0;
-    font-family: "Noto Serif KR", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    color: #73ADC3;
-}
-
-.samalet {
-    top: -22px;
-    width: 155px;
-    position: absolute;
-    z-index: 1;
-    flex-shrink: 0;
-}
-
-
-.info_main {
-    padding-top: 15px;
-}
-
-.info_main_content {
-    margin: 5px;
-    font-size: 28px;
-    color: #73ADC3;
-    text-align: center;
-}
-.buluttar_parashutist {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-.buluttar_img_parashutist {
-    display: flex;
+.header {
     width: 100%;
-}
-.img_parashutist {
-    position: absolute;
-    width: 100%;
-    padding-top: 15px;
-    display: flex;
-    justify-content: center;
-    z-index: 3;
-}
-.img_parashutist > img {
-    width: 180px;
-}
-
-.container_data_from {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    height: 100vh;
     display: grid;
-    align-items: center;
-    width: 100%;
     justify-content: center;
+    align-items: end;
+    background-image: url(./images/head_img_1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
-.container_data_from > div {
-    margin: 0;
-    font-family: "Noto Serif KR", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    color: #73ADC3;
-    font-size: 22px;
+.header > .header_main_content {
+    padding: 0;
+    display: grid;
+}
+.header > .header_main_content > .main_title {
     display: flex;
     justify-content: center;
+    font-family: 'Philosopher-Bold';
+    font-size: 68px;
+    color: #E7D876;
+    text-transform: uppercase;
+}
+.header > .header_main_content > .main_long_title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Philosopher-Bold';
+    font-size: 48px;
+    color: #E7D876;
+    text-transform: uppercase;
+}
+
+.header > .header_main_long_content {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.header > .header_main_long_content > .header_main_long_content_title {
+    font-family: 'Philosopher-Bold';
+    font-size: 24px;
+    color: #E7D876;
+    text-transform: uppercase;
+}
+
+.header > .header_main_long_content > .header_main_line {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 2px;
+    background-color: #E7D876;
+    border-radius: 5px;
+
+}
+
+.header > .header_main_long_content > .header_main_long_content_data {
+    display: flex;
+    justify-content: center;
+    font-family: 'Philosopher-Bold';
+    font-size: 24px;
+    color: #E7D876;
+    text-transform: uppercase;
+}
+
+.main {
+    width: 100%;
+    
+}
+
+.main > .main_content {
+    height: 80vh;
+    padding: 0 18px;
+    display: grid;
+    justify-content: center;
+}
+
+.main > .main_content > .main_info_content__title {
+    margin: 0;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-family: 'Lobster-Regular', cursive;
+    width: 100%;
+    color: #E7D876;
+    text-transform: uppercase;
+    font-size: 32px;
+    text-align: center;   
+}
+
+.main > .main_content > .main_info_content {
+    
+    padding-top: 15px;
+    
+    font-family: 'Lobster-Regular', cursive;
+    width: 100%;
+    color: #E7D876;
+    
+
+    font-size: 24px; 
     text-align: center;
 }
 
-.footer {
+
+.main > .main_data_info {
+    width: 100%;
+    height: 100vh;
+    
+    background-image: url(./images/image_2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer_img {
-    width: 100%;
+.main > .main_data_info > .main_data_info_content {
+    padding-left: 25px;
+    padding-right: 25px;
 
+}
+
+.main > .main_data_info > .main_data_info_content > .main_data_info__title {
+    margin: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-family: 'Lobster-Regular', cursive;
+    width: 100%;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;   
+}
+.main_data_info_watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+.main_data_info__watch {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.main_data_info_watch_container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.main_data_info_watch_line {
+    margin: 5px;
+    width: 3px;
+    height: 38px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-color: #ffffff;
+}
+
+.main_data_colendars {
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.main_data_colendar_title {
+    padding: 15px 0;
+    font-family: 'Philosopher-Bold';
+    font-size: 32px;
+    color: #E7D876;
+    text-align: center;
+}
+
+.main_data_colendar_week {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    
+}
+.main_data_colendar_day {
+    width: 22px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Philosopher-Bold';
+
+    color: #E7D876;
+    text-align: center;
+
+}
+.main_data_colendar_day__border {
+    border: 1px solid #E7D876;
+    border-radius: 45%;
+}
+
+.location_2gis_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    background-color: #E7D876;
+}
+.location_2gis_img > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.location_2gis_img > a > img {
+    width: 80%;
+    border-radius: 5px;
+    border-color: #f1f0ea;
+    
+
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%; 
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .header > .header_main_content > .main_title {
+        font-size: 68px;
+
+    }
+    .header > .header_main_content > .main_long_title {
+        font-size: 48px;
+    }
+  
+}
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #E7D876; /* Твой золотой цвет */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Стили для SVG внутри кнопки */
+.music-button svg {
+    width: 24px;  /* Размер иконки */
+    height: 24px;
+    color: #000;  /* Цвет иконки (черный на золотом фоне) */
+}
+
+/* --- Логика переключения иконок --- */
+
+/* По умолчанию (когда пауза) показываем иконку "выключено" */
+.music-button .icon-play { display: none; }
+.music-button .icon-pause { display: block; }
+
+/* Когда музыка играет (есть класс .playing), меняем иконки */
+.music-button.playing .icon-play { display: block; }
+.music-button.playing .icon-pause { display: none; }
+
+/* Анимация пульсации, когда музыка играет */
+.music-button.playing {
+    animation: pulse_music 2s infinite;
+}
+
+@keyframes pulse_music {
+    0% { box-shadow: 0 0 0 0 rgba(231, 216, 118, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(231, 216, 118, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 216, 118, 0); }
 }
