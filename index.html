@@ -1,246 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Айгерім қыз ұзату</title>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header_main_content">
-                <div class="main_title">Aigerym</div>
-                <div class="main_long_title">Qyz uzatu</div>
-            </div>    
-            <div class="header_main_long_content">
-                <div class="header_main_long_content_title">Төменге қарай өтініз</div>
-                <div class="header_main_line"></div>
-                <div class="header_main_long_content_data">20.06.2026</div>
+
+<div class="container">
+
+    <!-- ===== ШАПКА (HEADER) ===== -->
+    <header class="header">
+        <!-- Декоративный орнамент (оюы) — вращается через CSS -->
+        <div class="oy-corusel">
+            <img src="./images/ою.png" alt="Орнамент" />
+        </div>
+
+        <!-- Название события -->
+        <div class="titles">
+            <div class="title-kelin-name">АЙГЕРІМ</div>
+            <div class="title-toi-atauy">қыз ұзату</div>
+        </div>
+
+        <!-- Главное фото невесты -->
+        <div class="main-img">
+            <img src="./images/Кремовый и Зеленый Творческий Резюме.png" alt="Айгерім" />
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ===== ОБРАТНЫЙ ОТСЧЁТ ===== -->
+        <section class="countdown">
+            <div class="countdown__title title-toi-atauy">Той салтанатына дейін</div>
+            <div class="countdown__timer">
+
+                <div class="countdown__item">
+                    <span id="timer-day" class="countdown__value">0</span>
+                    <span class="countdown__label">күн</span>
+                </div>
+
+                <div class="countdown__divider"></div>
+
+                <div class="countdown__item">
+                    <span id="timer-h" class="countdown__value">0</span>
+                    <span class="countdown__label">сағат</span>
+                </div>
+
+                <div class="countdown__divider"></div>
+
+                <div class="countdown__item">
+                    <span id="timer-m" class="countdown__value">0</span>
+                    <span class="countdown__label">минут</span>
+                </div>
+
+                <div class="countdown__divider"></div>
+
+                <div class="countdown__item">
+                    <span id="timer-s" class="countdown__value">0</span>
+                    <span class="countdown__label">секунд</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== ПРИГЛАШЕНИЕ (ХАБАРЛАНДЫРУ) ===== -->
+        <section class="invitation">
+            <!-- Орнамент слева — вращается через CSS -->
+            <div class="invitation__oy">
+                <img src="./images/ою.png" alt="Орнамент" />
             </div>
 
-            <audio id="bgMusic" loop>
-                <source src="./music/1759655100-k-azybek-k-u-raiysh-suiemin-ost-bolg-an-ok-ig-a_tWmFI75c.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
-            <div class="audio-control">
-                <button id="muteBtn" class="music-button">
-                    <svg class="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    </svg>
-                    
-                    <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                        <line x1="23" y1="9" x2="17" y2="15"></line>
-                        <line x1="17" y1="9" x2="23" y2="15"></line>
-                    </svg>
-                </button>
+            <!-- Текст приглашения — появляется при скролле (JS IntersectionObserver) -->
+            <div class="invitation__content js-reveal">
+                <p class="invitation__greeting">құрметті қонақтар!</p>
+                <p class="invitation__sub">Сіздерді аяулы қызымыз</p>
+                <p class="invitation__name">Айгерімнің</p>
+                <p class="invitation__sub">
+                    ұзату тойына арналған салтанатты ақдастарханымыздың қадірлі қонағы болуға шақырамыз!
+                </p>
             </div>
-        </header>
-        <main class="main">
-            <div class="main_content">
-                <div class="main_info_content__title">Құрметті қонақтар!</div>
-                <div class="main_info_content">Сіздерді аяулы қызымыз Айгерімнің ұзату тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</div>
+        </section>
+
+        <!-- ===== КОНВЕРТ С ДАТОЙ ===== -->
+        <section class="envelope">
+            <!-- Фоновое изображение конверта -->
+            <div class="envelope__bg">
+                <img src="./images/Конверт.webp" alt="Конверт" />
             </div>
-            <div class="main_data_info">
-                <div class="main_data_info_content">
-                    <div class="main_data_info__title">Ұзатудың басталуына дейін: </div>
-                    <div class="main_data_info_watch">
-                        <div class="main_data_info_watch_container">
-                            <div id="main_data_info__watch_day" class="main_data_info__watch">0</div>
-                            <div class="main_data_info__watch_title main_data_info__watch">күн</div>
-                        </div>
 
-                        <div class="main_data_info_watch_line"></div>
-                        
-                        <div class="main_data_info_watch_container">
-                            <div id="main_data_info__watch_h" class="main_data_info__watch">12</div>
-                            <div class="main_data_info__watch_title main_data_info__watch">сағат</div>
-                        </div>
+            <div class="invitation__oy_rl">
+                <img src="./images/ою.png" alt="Орнамент" />
+            </div>
 
-                        <div class="main_data_info_watch_line"></div>
+            <!-- Контент поверх конверта -->
+            <div class="envelope__content">
+                <!-- Вертикальный подзаголовок -->
+                <span class="envelope__subtitle">Ұядан ұшқан күн</span>
 
-                        <div class="main_data_info_watch_container">
-                            <div id="main_data_info__watch_m" class="main_data_info__watch">12</div>
-                            <div class="main_data_info__watch_title main_data_info__watch">минут</div>
-                        </div>
-
-                        <div class="main_data_info_watch_line"></div>
-
-                        <div class="main_data_info_watch_container">
-                            <div id="main_data_info__watch_s" class="main_data_info__watch">12</div>
-                            <div class="main_data_info__watch_title main_data_info__watch">секунд</div>
-                        </div>
-                        
+                <!-- Дата и время -->
+                <div class="envelope__date-block">
+                    <div class="envelope__date">
+                        20 МАУСЫМ<br>2026 ЖЫЛЫ
                     </div>
+                    <div class="envelope__time">сағат 18:00</div>
                 </div>
             </div>
-            <div class="main_data_colendar">
-                    <div class="main_data_colendar_title">Июнь</div>
-                    <div class="main_data_colendars">
-                        <div class="main_data_colendar_week">
-                            <div class="main_data_colendar_day">1</div>
-                            <div class="main_data_colendar_day">2</div>
-                            <div class="main_data_colendar_day">3</div>
-                            <div class="main_data_colendar_day">4</div>
-                            <div class="main_data_colendar_day">5</div>
-                            <div class="main_data_colendar_day">6</div>
-                            <div class="main_data_colendar_day">7</div>
-                        </div>
-                        <div class="main_data_colendar_week">
-                            <div class="main_data_colendar_day">8</div>
-                            <div class="main_data_colendar_day">9</div>
-                            <div class="main_data_colendar_day">10</div>
-                            <div class="main_data_colendar_day">11</div>
-                            <div class="main_data_colendar_day">12</div>
-                            <div class="main_data_colendar_day">13</div>
-                            <div class="main_data_colendar_day">14</div>
-                        </div>
-                        <div class="main_data_colendar_week">
-                            <div class="main_data_colendar_day">15</div>
-                            <div class="main_data_colendar_day">16</div>
-                            <div class="main_data_colendar_day">17</div>
-                            <div class="main_data_colendar_day">18</div>
-                            <div class="main_data_colendar_day">19</div>
-                            <div class="main_data_colendar_day main_data_colendar_day__border">20</div>
-                            <div class="main_data_colendar_day">21</div>
-                        </div>
-                        <div class="main_data_colendar_week">
-                            <div class="main_data_colendar_day">22</div>
-                            <div class="main_data_colendar_day">23</div>
-                            <div class="main_data_colendar_day">24</div>
-                            <div class="main_data_colendar_day">25</div>
-                            <div class="main_data_colendar_day">26</div>
-                            <div class="main_data_colendar_day">27</div>
-                            <div class="main_data_colendar_day">28</div>
-                        </div>
-                        <div class="main_data_colendar_week">
-                            <div class="main_data_colendar_day">29</div>
-                            <div class="main_data_colendar_day">30</div>
-                            <div class="main_data_colendar_day"></div>
-                            <div class="main_data_colendar_day"></div>
-                            <div class="main_data_colendar_day"></div>
-                            <div class="main_data_colendar_day"></div>
-                            <div class="main_data_colendar_day"></div>
-                        </div>
-                    </div>
-                    <div class="main_data_colendar_title">Сағат 18:00 - де </div>
-                </div>
-        </main>
-        <footer class="footer">
-            <div class="location_button_wrapper">
-                <div class="location_2gis_img">
-                    <a href="https://2gis.kz/kostanaj/search/8k%20%D2%9B%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B9/firm/70000001035241079" >
-                        <img class="" src="./images/Снимок.PNG">
-                    </a>
-                    
-                </div>
+        </section>
+
+        <!-- ===== МЕЙРАМХАНА (АДРЕС) ===== -->
+        <section class="venue">
+            <div class="venue__titles">
+                <div class="venue__name">K-8</div>
+                <div class="venue__label">мейрамханасы</div>
             </div>
 
-        </footer>
-    </div>
-</body>
+            <div class="venue__images">
+                <img class="venue__img" src="./images/үкі.png" alt="Мейрамхана" />
+                <img class="venue__img" src="./images/фотозона.jpg" alt="Фотозона" />
+            </div>
+
+            <div class="venue__address">
+                Қостанай қаласы Курганская көшесі, 8/1
+            </div>
+        </section>
+
+        <!-- ===== ТОЙ ИЕЛЕРІ ===== -->
+        <section class="hosts">
+            <div class="hosts__label">Құрметпен, той иелері:</div>
+            <div class="hosts__name">Кайрхан - Алмагуль</div>
+        </section>
+
+        <!-- ===== ПОДВАЛ — ФОТО ===== -->
+        <div class="footer-img">
+            <img src="./images/footer.jpg" alt="" />
+        </div>
+
+    </main>
+</div><!-- /.container -->
+
+<!-- ===== ФОНОВАЯ МУЗЫКА ===== -->
+<audio id="bgMusic" loop>
+    <source src="./music/1759655100-k-azybek-k-u-raiysh-suiemin-ost-bolg-an-ok-ig-a_tWmFI75c.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Кнопка управления музыкой -->
+<div class="audio-control">
+    <button id="muteBtn" class="music-button" aria-label="Музыканы қосу/өшіру">
+        <!-- Иконка: музыка играет -->
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <!-- Иконка: музыка на паузе -->
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+</div>
 
 <script>
-/**
- * ПАРТНЕР ПРОГРАММИСТА: ФИНАЛЬНЫЙ СКРИПТ (ТАЙМЕР + МУЗЫКА)
- */
+/* =============================================
+   1. ОБРАТНЫЙ ОТСЧЁТ
+   Дата: 20 июня 2026, 18:00
+   Месяц в JS: индекс 5 = июнь
+   ============================================= */
+const TARGET_DATE = new Date(2026, 5, 20, 18, 0, 0);
 
-// 1. НАСТРОЙКА ДАТЫ (Год, Месяц [0-11], День, Час, Минуты)
-// 6 — это Июль, так как отсчет месяцев идет с нуля
-const TARGET_DATE = new Date(2026, 6, 20, 18, 0, 0); 
+const timerEl = {
+    day: document.getElementById('timer-day'),
+    h:   document.getElementById('timer-h'),
+    m:   document.getElementById('timer-m'),
+    s:   document.getElementById('timer-s'),
+};
 
-// --- ЛОГИКА ТАЙМЕРА ---
 function updateCountdown() {
-    const now = new Date();
-    const diff = TARGET_DATE - now;
-
-    // Элементы таймера
-    const elDay = document.getElementById('main_data_info__watch_day');
-    const elHour = document.getElementById('main_data_info__watch_h');
-    const elMin = document.getElementById('main_data_info__watch_m');
-    const elSec = document.getElementById('main_data_info__watch_s');
+    const diff = TARGET_DATE - new Date();
 
     if (diff <= 0) {
-        if (elDay) elDay.innerText = '0';
-        if (elHour) elHour.innerText = '0';
-        if (elMin) elMin.innerText = '0';
-        if (elSec) elSec.innerText = '0';
+        // Время вышло — обнуляем все ячейки
+        Object.values(timerEl).forEach(el => { if (el) el.textContent = '0'; });
         return;
     }
 
-    // Расчеты
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+    const days    = Math.floor(diff / 864e5);
+    const hours   = Math.floor((diff / 36e5) % 24);
+    const minutes = Math.floor((diff / 6e4) % 60);
+    const seconds = Math.floor((diff / 1e3) % 60);
 
-    // Вывод в HTML (с проверкой на существование элементов)
-    if (elDay) elDay.innerText = days;
-    if (elHour) elHour.innerText = hours;
-    if (elMin) elMin.innerText = minutes;
-    if (elSec) elSec.innerText = seconds;
+    if (timerEl.day) timerEl.day.textContent = days;
+    if (timerEl.h)   timerEl.h.textContent   = hours;
+    if (timerEl.m)   timerEl.m.textContent   = minutes;
+    if (timerEl.s)   timerEl.s.textContent   = seconds;
 }
 
-// Запуск таймера
 setInterval(updateCountdown, 1000);
-updateCountdown();
+updateCountdown(); // сразу без задержки
 
 
-// --- ЛОГИКА МУЗЫКИ ---
-const audio = document.getElementById('bgMusic');
+/* =============================================
+   2. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+   Использует IntersectionObserver.
+   Добавляет класс .active элементам с .js-reveal
+   ============================================= */
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // срабатывает только раз
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
+
+// Наблюдаем за всеми элементами с классом js-reveal
+document.querySelectorAll('.js-reveal').forEach(el => observer.observe(el));
+
+
+/* =============================================
+   3. УПРАВЛЕНИЕ МУЗЫКОЙ
+   - Автоплей запускается после первого действия пользователя
+   - Кнопка переключает воспроизведение / паузу
+   ============================================= */
+const audio   = document.getElementById('bgMusic');
 const muteBtn = document.getElementById('muteBtn');
 
-// Функция для попытки воспроизведения
-function attemptPlay() {
-    if (audio) {
-        audio.play()
-            .then(() => {
-                // Если музыка заиграла, убираем "слушателей" активации
-                removeAllListeners();
-            })
-            .catch(() => {
-                console.log("Автоплей заблокирован браузером. Ждем действия пользователя...");
-            });
-    }
+// Попытка запустить аудио (браузер требует взаимодействия)
+function tryPlay() {
+    audio.play()
+        .then(() => {
+            // Успешно — снимаем слушатели активации
+            ['click', 'touchstart', 'scroll'].forEach(ev =>
+                document.removeEventListener(ev, tryPlay)
+            );
+        })
+        .catch(() => { /* автоплей заблокирован, ждём действия */ });
 }
 
-// Удаление слушателей после первого успешного запуска
-function removeAllListeners() {
-    document.removeEventListener('click', attemptPlay);
-    document.removeEventListener('touchstart', attemptPlay);
-    document.removeEventListener('scroll', attemptPlay);
-}
+// Вешаем на первые действия пользователя
+['click', 'touchstart', 'scroll'].forEach(ev =>
+    document.addEventListener(ev, tryPlay, { passive: true })
+);
+window.addEventListener('load', tryPlay);
 
-// Слушаем любые действия пользователя для обхода блокировки звука
-document.addEventListener('click', attemptPlay);
-document.addEventListener('touchstart', attemptPlay);
-document.addEventListener('scroll', attemptPlay);
-window.addEventListener('load', attemptPlay);
+// Кнопка: пауза ↔ воспроизведение
+muteBtn.addEventListener('click', e => {
+    e.stopPropagation(); // чтобы не триггерить tryPlay снова
+    audio.paused ? audio.play() : audio.pause();
+});
 
-// Логика кнопки Mute (Вкл/Выкл)
-if (muteBtn) {
-    muteBtn.addEventListener('click', (event) => {
-        // Останавливаем "всплытие", чтобы не срабатывали другие скрипты
-        event.stopPropagation(); 
-        
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    });
-}
-
-// Отслеживание состояния аудио для смены дизайна кнопки (через CSS класс .playing)
-if (audio && muteBtn) {
-    audio.onplay = () => {
-        muteBtn.classList.add('playing');
-    };
-    audio.onpause = () => {
-        muteBtn.classList.remove('playing');
-    };
-}
+// CSS-класс .playing управляет иконкой и анимацией пульсации
+audio.addEventListener('play',  () => muteBtn.classList.add('playing'));
+audio.addEventListener('pause', () => muteBtn.classList.remove('playing'));
 </script>
+
+</body>
 </html>

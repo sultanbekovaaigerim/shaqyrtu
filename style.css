@@ -1,304 +1,431 @@
-@font-face {
-    font-family: 'Philosopher-Bold';
-    src: url(./fonts/Philosopher-Bold.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Philosopher-BoldItalic';
-    src: url(./fonts/Philosopher-BoldItalic.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Philosopher-Italic';
-    src: url(./fonts/Philosopher-Italic.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* =============================================
+   ШРИФТЫ
+   ============================================= */
 @font-face {
     font-family: 'Philosopher-Regular';
     src: url(./fonts/Philosopher-Regular.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
-
+@font-face {
+    font-family: 'Philosopher-Bold';
+    src: url(./fonts/Philosopher-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Philosopher-BoldItalic';
+    src: url(./fonts/Philosopher-BoldItalic.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Philosopher-Italic';
+    src: url(./fonts/Philosopher-Italic.ttf) format('truetype');
+}
 @font-face {
     font-family: 'Lobster-Regular';
     src: url(./fonts/Lobster-Regular.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
+}
+@font-face {
+    font-family: 'Caveat-Regular';
+    src: url(./fonts/coveat/Caveat-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Caveat-Bold';
+    src: url(./fonts/coveat/Caveat-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Caveat-Medium';
+    src: url(./fonts/coveat/Caveat-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Caveat-SemiBold';
+    src: url(./fonts/coveat/Caveat-SemiBold.ttf) format('truetype');
 }
 
+/* =============================================
+   CSS-ПЕРЕМЕННЫЕ
+   ============================================= */
+:root {
+    --color-primary:   #623C31;
+    --color-secondary: #a7624f;
+    --color-text:      #4a3f35;
+    --color-muted:     #5d544b;
+    --color-gold:      #E7D876;
+    --font-display:    'Philosopher-Regular', serif;
+    --font-script:     'Caveat-Regular', cursive;
+    --font-body:       'Montserrat', sans-serif;
+}
+
+/* =============================================
+   СБРОС И БАЗОВЫЕ СТИЛИ
+   ============================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .container {
-    width: 90%;
+    width: 450px;
     margin: auto;
     font-size: 18px;
+    overflow: hidden; /* чтобы орнаменты не выходили за контейнер */
 }
 
+/* =============================================
+   ШАПКА (HEADER)
+   ============================================= */
 .header {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-items: end;
-    background-image: url(./images/head_img_1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
-
-.header > .header_main_content {
-    padding: 0;
-    display: grid;
-}
-.header > .header_main_content > .main_title {
-    display: flex;
-    justify-content: center;
-    font-family: 'Philosopher-Bold';
-    font-size: 68px;
-    color: #E7D876;
-    text-transform: uppercase;
-}
-.header > .header_main_content > .main_long_title {
-    display: flex;
-    justify-content: center;
-    font-family: 'Philosopher-Bold';
-    font-size: 48px;
-    color: #E7D876;
-    text-transform: uppercase;
-}
-
-.header > .header_main_long_content {
+    position: relative;
     width: 100%;
     display: grid;
     justify-content: center;
-    padding-bottom: 15px;
-}
-.header > .header_main_long_content > .header_main_long_content_title {
-    font-family: 'Philosopher-Bold';
-    font-size: 24px;
-    color: #E7D876;
-    text-transform: uppercase;
 }
 
-.header > .header_main_long_content > .header_main_line {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 2px;
-    background-color: #E7D876;
-    border-radius: 5px;
-
+/* Декоративный орнамент — правый верхний угол */
+.oy-corusel {
+    position: absolute;
+    top: -90px;
+    right: -90px;
+    z-index: -1;
+    animation: fadeIn 3s ease-out forwards;
+}
+.oy-corusel img {
+    width: 180px;
+    height: 180px;
+    animation: rotate 15s linear infinite;
 }
 
-.header > .header_main_long_content > .header_main_long_content_data {
-    display: flex;
-    justify-content: center;
-    font-family: 'Philosopher-Bold';
-    font-size: 24px;
-    color: #E7D876;
-    text-transform: uppercase;
+/* Имя невесты */
+.title-kelin-name {
+    font-family: var(--font-display);
+    font-size: 42px;
+    color: var(--color-primary);
+    text-align: center;
+    animation: fadeIn 4s ease-out forwards;
 }
 
-.main {
-    width: 100%;
-    
-}
-
-.main > .main_content {
-    height: 80vh;
-    padding: 0 18px;
-    display: grid;
-    justify-content: center;
-}
-
-.main > .main_content > .main_info_content__title {
-    margin: 0;
-    padding-bottom: 15px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    font-family: 'Lobster-Regular', cursive;
-    width: 100%;
-    color: #E7D876;
-    text-transform: uppercase;
+/* Подзаголовок (қыз ұзату и т.д.) */
+.title-toi-atauy {
+    font-family: var(--font-script);
     font-size: 32px;
-    text-align: center;   
-}
-
-.main > .main_content > .main_info_content {
-    
-    padding-top: 15px;
-    
-    font-family: 'Lobster-Regular', cursive;
-    width: 100%;
-    color: #E7D876;
-    
-
-    font-size: 24px; 
+    color: var(--color-secondary);
     text-align: center;
 }
 
+.titles {
+    margin: 15px 0;
+}
 
-.main > .main_data_info {
+/* Главная фотография */
+.main-img {
     width: 100%;
-    height: 100vh;
-    
-    background-image: url(./images/image_2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    animation: fadeIn 4s ease-out forwards;
+}
+.main-img img {
+    width: 380px;
+    height: 380px;
 }
 
-.main > .main_data_info > .main_data_info_content {
-    padding-left: 25px;
-    padding-right: 25px;
-
+/* =============================================
+   ОБРАТНЫЙ ОТСЧЁТ
+   ============================================= */
+.countdown {
+    padding: 20px 0;
 }
 
-.main > .main_data_info > .main_data_info_content > .main_data_info__title {
-    margin: 0;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    font-family: 'Lobster-Regular', cursive;
-    width: 100%;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 24px;
-    text-align: center;   
+.countdown__title {
+    margin-bottom: 10px;
 }
-.main_data_info_watch {
+
+.countdown__timer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
 }
-.main_data_info__watch {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    font-size: 18px;
-}
 
-.main_data_info_watch_container {
+.countdown__item {
     display: grid;
-    justify-content: center;
-    align-items: center;
-
-    padding-left: 3px;
-    padding-right: 3px;
+    justify-items: center;
+    padding: 0 6px;
 }
 
-.main_data_info_watch_line {
-    margin: 5px;
+.countdown__value {
+    color: var(--color-primary);
+    font-size: 28px;
+    font-family: var(--font-display);
+    /* Анимация: каждое обновление секунды — лёгкий «прыжок» цифры */
+    transition: transform 0.2s ease;
+}
+
+/* Вертикальный разделитель между блоками */
+.countdown__divider {
     width: 3px;
     height: 38px;
-    background-color: #ffffff;
+    background-color: #ddd;
     border-radius: 8px;
-    border-color: #ffffff;
+    margin: 0 5px;
 }
 
-.main_data_colendars {
-    margin-left: 45px;
-    margin-right: 45px;
+.countdown__label {
+    color: var(--color-primary);
+    font-size: 14px;
+    margin-top: 4px;
 }
 
-.main_data_colendar_title {
-    padding: 15px 0;
-    font-family: 'Philosopher-Bold';
+/* =============================================
+   ПРИГЛАШЕНИЕ (INVITATION)
+   ============================================= */
+.invitation {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+/* Левый орнамент */
+.invitation__oy {
+    position: absolute;
+    left: -90px;
+    z-index: -1;
+}
+.invitation__oy img {
+    width: 180px;
+    height: 180px;
+    animation: rotate 20s linear infinite;
+}
+
+/* Блок текста приглашения */
+.invitation__content {
+    margin-top: 15px;
+    width: 350px;
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+}
+
+/* --- Анимация появления при скролле ---
+   Начальное состояние: скрыт + сдвинут вниз.
+   JS добавляет .active — элементы плавно появляются с задержкой */
+.invitation__content > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+.invitation__content.active > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Каскадные задержки для каждого абзаца */
+.invitation__content.active > *:nth-child(1) { transition-delay: 0.2s; }
+.invitation__content.active > *:nth-child(2) { transition-delay: 0.5s; }
+.invitation__content.active > *:nth-child(3) { transition-delay: 0.8s; }
+.invitation__content.active > *:nth-child(4) { transition-delay: 1.1s; }
+
+.invitation__greeting {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.invitation__name {
+    font-family: var(--font-display);
     font-size: 32px;
-    color: #E7D876;
+    color: var(--color-primary);
+    text-align: center;
+    /* Анимация «увеличения» имени при первом появлении */
+    animation: zoomInName 2s ease-out forwards;
+    margin: 8px 0;
+}
+
+.invitation__sub {
+    font-size: 22px;
+    font-family: var(--font-body);
+    color: var(--color-text);
     text-align: center;
 }
 
-.main_data_colendar_week {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+/* =============================================
+   КОНВЕРТ С ДАТОЙ
+   ============================================= */
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+.invitation__oy_rl {
+    position: absolute;
+    right: -90px;
+    bottom: -230px;
+    z-index: -2;
+}
+.invitation__oy_rl > img {
+    width: 180px;
+    height: 180px;
+    animation: rotate 20s linear infinite;
     
 }
-.main_data_colendar_day {
-    width: 22px;
-    height: 32px;
+
+
+/* Фоновый конверт (фотография) */
+.envelope__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+.envelope__bg img {
+    width: 480px;
+    height: 480px;
+}
+
+/* Контент поверх конверта */
+.envelope__content {
+    height: 100%;
     display: flex;
+    /* justify-content: center; */
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-family: 'Philosopher-Bold';
+    padding: 0 22px;
+}
 
-    color: #E7D876;
+/* Вертикальный текст «Ұядан ұшқан күн» */
+.envelope__subtitle {
+    right: 350px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    margin: 8px;
+    font-family: var(--font-script);
+    color: var(--color-muted);
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    white-space: nowrap;
+    /* Анимация: выезжает снизу с учётом rotate(180deg) */
+    opacity: 0;
+    animation: slideUpVertical 1.2s ease-out 0.3s forwards;
+}
+
+/* Блок даты */
+.envelope__date-block {
+    padding-left: 32px;
+    font-family: var(--font-body);
+    color: var(--color-text);
     text-align: center;
-
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Анимация: появляется справа */
+    opacity: 0;
+    animation: fadeInRight 1.5s ease-out 0.8s forwards;
 }
-.main_data_colendar_day__border {
-    border: 1px solid #E7D876;
-    border-radius: 45%;
+
+.envelope__date {
+    font-size: 28px;
+    font-weight: 300;
+    margin: 8px 0;
 }
 
-.location_2gis_img {
+.envelope__time {
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: lowercase;
+    opacity: 0.9;
+    margin-top: 12px;
+}
+
+/* =============================================
+   МЕЙРАМХАНА (VENUE)
+   ============================================= */
+.venue {
+    margin-top: 35px;
+}
+
+.venue__titles {
+    padding-top: 32px;
+    margin-bottom: 28px;
+    display: grid;
+    justify-items: center;
+}
+
+.venue__name {
+    font-family: var(--font-script);
+    font-size: 38px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.venue__label {
+    font-family: var(--font-body);
+    font-size: 24px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.venue__images {
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    background-color: #E7D876;
-}
-.location_2gis_img > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.location_2gis_img > a > img {
-    width: 80%;
-    border-radius: 5px;
-    border-color: #f1f0ea;
-    
-
+    justify-content: space-between;
 }
 
-@media screen and (max-width: 480px) {
-    .container {
-        width: 100%; 
-        font-size: 16px;
-        margin: 0;
-    }
-
-    .header {
-        width: 100%;
-    }
-
-    .header > .header_main_content > .main_title {
-        font-size: 68px;
-
-    }
-    .header > .header_main_content > .main_long_title {
-        font-size: 48px;
-    }
-  
+.venue__img {
+    padding: 5px;
+    width: 50%;
+    height: 280px;
+    object-fit: cover;
 }
+
+.venue__address {
+    font-family: var(--font-body);
+    font-size: 18px;
+    padding: 5px 100px 5px 5px;
+    color: var(--color-text);
+}
+
+/* =============================================
+   ТОЙ ИЕЛЕРІ (HOSTS)
+   ============================================= */
+.hosts {
+    margin: 35px 0;
+    display: grid;
+    justify-items: center;
+}
+
+.hosts__label {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.hosts__name {
+    font-family: var(--font-display);
+    font-size: 36px;
+    text-align: center;
+    color: var(--color-primary);
+    padding: 12px 0;
+}
+
+/* =============================================
+   ПОДВАЛ — ФОТО
+   ============================================= */
+.footer-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* =============================================
+   КНОПКА МУЗЫКИ
+   ============================================= */
 .audio-control {
     position: fixed;
     bottom: 20px;
@@ -310,41 +437,90 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #E7D876; /* Твой золотой цвет */
+    background-color: var(--color-gold);
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    padding: 0; /* Убираем внутренние отступы */
 }
 
-/* Стили для SVG внутри кнопки */
 .music-button svg {
-    width: 24px;  /* Размер иконки */
+    width: 24px;
     height: 24px;
-    color: #000;  /* Цвет иконки (черный на золотом фоне) */
+    color: #000;
 }
 
-/* --- Логика переключения иконок --- */
+/* Иконки: по умолчанию показываем «пауза» (музыка не играет) */
+.music-button .icon-on  { display: none; }
+.music-button .icon-off { display: block; }
 
-/* По умолчанию (когда пауза) показываем иконку "выключено" */
-.music-button .icon-play { display: none; }
-.music-button .icon-pause { display: block; }
+/* Когда играет (.playing) — показываем «звук включён» + пульсация */
+.music-button.playing .icon-on  { display: block; }
+.music-button.playing .icon-off { display: none; }
 
-/* Когда музыка играет (есть класс .playing), меняем иконки */
-.music-button.playing .icon-play { display: block; }
-.music-button.playing .icon-pause { display: none; }
-
-/* Анимация пульсации, когда музыка играет */
 .music-button.playing {
-    animation: pulse_music 2s infinite;
+    animation: pulseMusicBtn 2s infinite;
 }
 
-@keyframes pulse_music {
-    0% { box-shadow: 0 0 0 0 rgba(231, 216, 118, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(231, 216, 118, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(231, 216, 118, 0); }
+/* =============================================
+   АНИМАЦИИ (KEYFRAMES)
+   ============================================= */
+
+/* Бесконечное вращение орнаментов */
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+/* Плавное появление (прозрачность) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Появление справа */
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Выезд снизу для вертикального текста */
+@keyframes slideUpVertical {
+    from { opacity: 0; transform: rotate(180deg) translateY(-30px); }
+    to   { opacity: 1; transform: rotate(180deg) translateY(0); }
+}
+
+/* «Зум» имени невесты при появлении */
+@keyframes zoomInName {
+    from { font-size: 48px; opacity: 0; }
+    to   { font-size: 32px; opacity: 1; }
+}
+
+/* Пульсирующая тень кнопки музыки */
+@keyframes pulseMusicBtn {
+    0%   { box-shadow: 0 0 0 0   rgba(231,216,118,0.7); }
+    70%  { box-shadow: 0 0 0 15px rgba(231,216,118,0);   }
+    100% { box-shadow: 0 0 0 0   rgba(231,216,118,0);   }
+}
+
+/* =============================================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ (≤480px)
+   ============================================= */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .main-img img {
+        width: 100%;
+        height: auto;
+    }
 }
